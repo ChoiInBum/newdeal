@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Swiper demo</title>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+        />
+        <!-- Link Swiper's CSS -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+        />
+
+        <!-- Demo styles -->
+        <style>
+            html,
+            body {
+                position: relative;
+                height: 100%;
+            }
+
+            body {
+                background: #eee;
+                font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+                font-size: 14px;
+                color: #000;
+                margin: 0;
+                padding: 0;
+            }
+
+            .swiper {
+                overflow: visible;
+                max-width: 1280px;
+                width: 100%;
+                height: 300px;
+                margin-top: 300px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .swiper-slide {
+                text-align: center;
+                font-size: 18px;
+                background: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 300px;
+            }
+
+            .swiper-slide img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .container {
+                overflow: hidden;
+            }
+            .swiper-button-next,
+            .swiper-button-prev {
+                top: -60px;
+                margin-top: 0;
+            }
+            .swiper-button-prev {
+                right: 100px;
+                left: auto;
+            }
+            .swiper-container {
+                position: relative;
+            }
+            .parent {
+                margin-bottom: 100px;
+                background: lightblue;
+            }
+            .child {
+                height: 100%;
+                background: blueviolet;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="parent">
+            <div class="child">2</div>
+        </div>
+
+        <!-- Swiper -->
+        <div class="container etf-slide-wrap">
+            <div class="swiper-container etf-slide">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">Slide 1</div>
+                    <div class="swiper-slide">Slide 2</div>
+                    <div class="swiper-slide">Slide 3</div>
+                    <div class="swiper-slide">Slide 4</div>
+                    <div class="swiper-slide">Slide 5</div>
+                    <div class="swiper-slide">Slide 6</div>
+                    <div class="swiper-slide">Slide 7</div>
+                    <div class="swiper-slide">Slide 8</div>
+                    <div class="swiper-slide">Slide 9</div>
+                </div>
+                <div class="swiper-button-next etf-next"></div>
+                <div class="swiper-button-prev etf-prev"></div>
+            </div>
+        </div>
+
+        <div class="swiper intro-slide">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">Slide 1</div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+                <div class="swiper-slide">Slide 4</div>
+                <div class="swiper-slide">Slide 5</div>
+                <div class="swiper-slide">Slide 6</div>
+                <div class="swiper-slide">Slide 7</div>
+                <div class="swiper-slide">Slide 8</div>
+                <div class="swiper-slide">Slide 9</div>
+            </div>
+            <div class="swiper-button-next intro-next"></div>
+            <div class="swiper-button-prev intro-prev"></div>
+            <div class="swiper-pagination intro-pagination"></div>
+        </div>
+
+        <!-- Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+        <!-- Initialize Swiper -->
+        <script>
+            var etfSwiper = new Swiper('.etf-slide', {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                loop: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.etf-next',
+                    prevEl: '.etf-prev',
+                },
+                breakpoints: {
+                    600: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    1024: {
+                        slidesPerView: 4,
+                        spaceBetween: 50,
+                    },
+                },
+            });
+
+            var introSwiper = new Swiper('.intro-slide', {
+                pagination: {
+                    el: '.intro-pagination',
+                    type: 'progressbar',
+                },
+                navigation: {
+                    nextEl: '.intro-next',
+                    prevEl: '.intro-prev',
+                },
+            });
+        </script>
+    </body>
+</html>
